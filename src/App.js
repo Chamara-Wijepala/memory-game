@@ -1,4 +1,5 @@
 import React from "react";
+import Gameboard from "./components/Gameboard";
 
 function App() {
   return (
@@ -12,11 +13,7 @@ function App() {
         </div>
       </header>
       <main>
-        <div id="Gameboard">
-          <div className="Card"></div>
-          <div className="Card"></div>
-          <div className="Card"></div>
-        </div>
+        <Gameboard/>
       </main>
     </React.Fragment>
   )
