@@ -35,6 +35,8 @@ main {
 
 .Card {
   border: 1px solid black;
+  box-shadow: 5px 5px;
+  border-radius: 10%;
   height: 150px;
   width: 150px;
   margin: 2rem;
