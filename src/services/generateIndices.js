@@ -1,8 +1,8 @@
 export default function generateIndices(selectedPokemon) {
-  let indices = [];
+  const indices = [];
 
   for(let i = 0; i < 3; i++) {
-    let index = Math.floor(Math.random() * 898);
+    const index = Math.floor(Math.random() * 898);
     indices.push(index);
   };
 
