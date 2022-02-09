@@ -4,6 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: 'Press Start 2p', cursive;
+  font-size: small;
   color: #31322b;
 }
 
@@ -15,13 +16,28 @@
 
 header {
   min-height: 2rem;
-  border-bottom: 1px solid black;
+  display: flex;
   flex: 0 1 auto;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  border-bottom: 2px solid #31322b;
+}
+
+#ClearScoreButton {
+  border: 1px solid;
+  border-radius: 3px;
+  padding: 0.5rem;
+  margin: 1rem;
+}
+
+#ClearScoreButton:hover {
+  border: 1px solid red;
 }
 
 #ScoreBoard {
-  display: flex;
   float: right;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 main {
