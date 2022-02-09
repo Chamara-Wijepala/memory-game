@@ -30,6 +30,7 @@ export default function Gameboard() {
   // Adds card's id to state when clicked
   function handleClick(event) {
     setSelectedPokemon(prevPokemon => [...prevPokemon, event.target.id])
+    setIsLoading(true);
   };
 
   return (
