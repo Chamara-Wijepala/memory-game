@@ -22,9 +22,15 @@ function App() {
     setScore(0);
   };
 
+  function clearScore() {
+    setScore(0);
+    setBestScore(0)
+    localStorage.setItem('bestScore', 0);
+  }
+
   return (
     <React.Fragment>
-      <Header score={score} bestScore={bestScore} />
+      <Header score={score} bestScore={bestScore} clearScore={clearScore} />
       <main>
         <Gameboard updateScore={updateScore} resetScore={resetScore} />
       </main>
