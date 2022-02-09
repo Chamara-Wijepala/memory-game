@@ -3,7 +3,7 @@ import fetchPokemon from "../services/fetchPokemon";
 import generateIndices from '../services/generateIndices'
 import RenderCardDeck from "./RenderCardDeck";
 
-export default function Gameboard() {
+export default function Gameboard({ updateScore }) {
   const [ isLoading, setIsLoading ] = useState(true);
   const [ selectedPokemon, setSelectedPokemon ] = useState([]);
   const [ cardDeck, setCardDeck ] = useState([]);
@@ -30,6 +30,7 @@ export default function Gameboard() {
   // Adds card's id to state when clicked
   function handleClick(event) {
     setSelectedPokemon(prevPokemon => [...prevPokemon, event.target.id])
+    updateScore();
     setIsLoading(true);
   };
 

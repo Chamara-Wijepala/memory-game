@@ -1,19 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Gameboard from "./components/Gameboard";
+import Header from "./components/Header";
 
 function App() {
+  const [ score, setScore ] = useState(0);
+  const [ bestScore, setBestScore ] = useState(0);
+
+  function updateScore() {
+    const newScore = score + 1;
+
+    setScore(newScore);
+    if ( newScore > bestScore ) {
+      setBestScore(newScore);
+    };
+  };
+
   return (
     <React.Fragment>
-      <header>
-        <button id="ClearScoreButton">Clear Score</button>
-        <div id="ScoreBoard">
-          <p>Score: 0</p>
-          |
-          <p>Best Score: 17</p>
-        </div>
-      </header>
+      <Header score={score} bestScore={bestScore} />
       <main>
-        <Gameboard/>
+        <Gameboard updateScore={updateScore} />
       </main>
     </React.Fragment>
   )
