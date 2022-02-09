@@ -30,9 +30,16 @@ function App() {
 
   return (
     <React.Fragment>
-      <Header score={score} bestScore={bestScore} clearScore={clearScore} />
+      <Header
+        score={score}
+        bestScore={bestScore}
+        clearScore={clearScore}
+      />
       <main>
-        <Gameboard updateScore={updateScore} resetScore={resetScore} />
+        <Gameboard
+          updateScore={updateScore}
+          resetScore={resetScore}
+        />
       </main>
     </React.Fragment>
   )
