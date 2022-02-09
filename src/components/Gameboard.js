@@ -3,7 +3,7 @@ import fetchPokemon from "../services/fetchPokemon";
 import generateIndices from '../services/generateIndices'
 import RenderCardDeck from "./RenderCardDeck";
 
-export default function Gameboard({ updateScore }) {
+export default function Gameboard({ updateScore, resetScore }) {
   const [ isLoading, setIsLoading ] = useState(true);
   const [ selectedPokemon, setSelectedPokemon ] = useState([]);
   const [ cardDeck, setCardDeck ] = useState([]);
@@ -27,10 +27,17 @@ export default function Gameboard({ updateScore }) {
     });
   }, [selectedPokemon]);
 
-  // Adds card's id to state when clicked
+  // If selectedPokemon already has id of clicked card, reset the score and
+  // selectedPokemon. Else update score and add id to selectedPokemon
   function handleClick(event) {
-    setSelectedPokemon(prevPokemon => [...prevPokemon, event.target.id])
-    updateScore();
+    if ( selectedPokemon.includes(event.target.id) ) {
+      resetScore();
+      setSelectedPokemon([]);
+    } else {
+      updateScore();
+      setSelectedPokemon(prevPokemon => [...prevPokemon, event.target.id]);
+    };
+
     setIsLoading(true);
   };
 

@@ -18,11 +18,15 @@ function App() {
     };
   };
 
+  function resetScore() {
+    setScore(0);
+  };
+
   return (
     <React.Fragment>
       <Header score={score} bestScore={bestScore} />
       <main>
-        <Gameboard updateScore={updateScore} />
+        <Gameboard updateScore={updateScore} resetScore={resetScore} />
       </main>
     </React.Fragment>
   )
